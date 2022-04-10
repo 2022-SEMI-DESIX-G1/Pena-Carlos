@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 3</title>
+</head>
+<body>
+
+    <div>
+        <label for="primero">1. ingrese un numero: </label>
+        <input id="primero" type="number">
+        <input onclick="doublePalindrome()" type="submit" value="Palindromo?">
+        <p id="res1">...</p>
+    </div>
+    <hr>
+    <div>
+        <label for="segundo">2. ingrese una cadena: </label>
+        <input id="segundo" type="text">
+        <input onclick="count()" type="submit" value="contar">
+        <p id="res2">...</p>
+    </div>
+    <hr>
+    <div>
+        <label for="tercero">3. ingrese un año: </label>
+        <input id="tercero" type="text">
+        <input onclick="leap_year()" type="submit" value="validar">
+        <p id="res3">...</p>
+    </div>
+    <hr>
+    <div>
+        <label for="cuarto">4. ingrese un numero</label>
+        <input id="cuarto" type="text">
+        <input onclick="add()" type="submit" value="Sumar">
+        <p id="res4">...</p>
+    </div>
+    
+    <script src="js.js"></script>
+</body>
+</html>
