@@ -50,7 +50,7 @@ var myFunc = function() {
     var eliminar = (e => {   
         let card = document.getElementById(index);
         //filtro elemento del evento
-        if(e.originalTarget.className == 'card-item'){
+        if(e.target.className == 'card-item'){
             //ocultar icono de cerrar de tarjetas activadas            
             card.children[0].style.visibility = 'hidden';
             //asigno el id del nodo padre           
@@ -61,7 +61,7 @@ var myFunc = function() {
             card.children[0].style.visibility = 'visible';
         }
         
-        if(e.originalTarget.className === 'close-item'){
+        if(e.target.className === 'close-item'){
             //muestra mensaje de confirmacion
             let response = confirm("Estas seguro de eliminar la tarjeta seleccionada?")
             //comrpueba respuesta
