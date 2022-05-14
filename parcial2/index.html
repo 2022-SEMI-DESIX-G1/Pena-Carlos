@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+        </style> 
+</head>
+<body>
+    <main>
+        <section class="form-card center">
+            <form id="pokemon-finder-form" class="form-card-content" action="">
+
+                <section class="form-card-logo">
+                    <img src="assets/img/pokeapi_256.png" alt="">
+                </section>
+                <section class="form-card-title">
+                    <h1>Buscador de pokemones</h1>
+                    <p>Busca desde pokemones hasta las habilidades de los mismos.</p>
+                </section>
+                <section class="form-card-input">
+                    <section class="form-card-input-child">
+                        <section class="flex-left">
+                            <label for="query">Buscar</label>
+                        </section>
+                        <input class="input" id="pokemon-finder-input" type="text">
+                    </section>
+
+                    <section class="form-card-input-child flex-end">
+                        <section class="flex-left">
+                            <label for="option">Tipo de búsqueda</label>
+                        </section>
+                        <select class="input" id="pokemon-finder-search-type">
+                            <option value="" style="display: none;"></option>
+                            <option value="pokemon">Por pokemon</option>
+                            <option value="ability">Por habilidad</option>
+                        </select>
+                    </section>
+                </section>
+                <section class="form-card-buttons">
+                    <button class="clear-button" id="pokemon-finder-clear-button" type="button">Limpiar</button>
+                    <button type="submit">Buscar</button>
+                </section>
+            </form>
+        </section>
+        <br>
+        <br>
+        <section id="pokemon-finder-output" >
+
+        </section>
+    </main>
+
+    <script src="utils.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
