@@ -8,7 +8,7 @@ router.get('/pokemon/:name', async function (req, res) {
         res.json(await controller.getPokemonFromCache(name))
     }
     catch (e) {
-        res.json(e)
+        res.status(400).json(e)
     }   
 })
 
@@ -26,6 +26,16 @@ router.get('/especies/:name', async function (req, res) {
     const { name } = req.params
     try{        
         res.json(await controller.getPokemonEspeciesFromCache(name))
+    }
+    catch (e) {
+        res.json(e)
+    }   
+})
+
+router.get('/cache',  function (req, res) {
+    const { name } = req.params
+    try{        
+        res.json( controller.getCache())
     }
     catch (e) {
         res.json(e)

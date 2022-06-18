@@ -21,6 +21,7 @@
                 return rawReponse.json();
             }
             catch(error) {
+                //console.log(error)
                 throw error;
             }
         },
