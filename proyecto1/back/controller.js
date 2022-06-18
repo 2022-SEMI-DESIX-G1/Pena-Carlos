@@ -21,13 +21,12 @@ const getPokemonFromCache = async (name) => {
 const getPokemonRutasFromCache = (name) => {
     return new Promise(async (reject, resolve) => {
         if (ERROR[name]) {
-            return reject(JSON.parse(ERROR[name]))
+            return reject((JSON.parse(ERROR[name])))
         }
-        if (RUTASCACHES[name]) {
+        if (RUTASCACHES[name]) {            
             return resolve({ data: JSON.parse(RUTASCACHES[name]), isCached: true })
         }
         const url = `https://pokeapi.co/api/v2/pokemon/${name}/encounters`;
-
         const response = await getPokemonFromApi(name, url,RUTASCACHES)
         return resolve(response)
     })
@@ -59,21 +58,29 @@ const getPokemonEspeciesFromCache = (name) => {
 
 const getPokemonFromApi = async (name, url, cache) => {
     try {
-        const { data } = await axios.get(url)
-        cache[name] = JSON.stringify({ name, data: data, date: new Date })
+        const data = await axios.get(url)
+        
+        cache[name] = JSON.stringify({ name, data: data.data, date: new Date(),status:200 })
     }
     catch (e) {
-        ERROR[name] = JSON.stringify({ name, error: "pokemon inválido" })
-        return (JSON.parse(ERROR[name]))
+        ERROR[name] = JSON.stringify({ name, error: "pokemon inválido",status:400})
+        return new Error (JSON.parse(ERROR[name]))
     }
 
     return ({ data: JSON.parse(cache[name]), isCached: false });
 }
 
-
-
+const getCache = () => {
+    return {
+        ERROR:ERROR,
+        ESPECIESCACHE:ESPECIESCACHE,
+        POKEMONCACHE:POKEMONCACHE,
+        RUTASCACHES:RUTASCACHES
+    }
+}
 module.exports = {
     getPokemonFromCache,
     getPokemonRutasFromCache,
-    getPokemonEspeciesFromCache
+    getPokemonEspeciesFromCache,
+    getCache
 }

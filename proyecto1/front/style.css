@@ -103,9 +103,8 @@ main {
 
 .pokemon-general-output {
     margin: auto;
-    margin-top: 20px;
     width: 50%;
-    border-radius: 5px;
+    
     padding: 30px;
     background: white;
     display: flex;
@@ -114,6 +113,21 @@ main {
 
 .pokemon-general-data {
     width: 40%;
+}
+
+.pokemon-general-data2 {
+    padding-top: 10px;
+    margin-left: 5%;
+}
+.pokemon-general-output2 {
+    margin: auto;
+    margin-top: 20px;
+    width: 50%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: white;
 }
 
 .pokemon-sprites {
@@ -150,7 +164,7 @@ main {
 
 .pokemon-ubicacion-data-table {    
     display: table;
-    table-layout: auto;
+    table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
     
@@ -162,6 +176,7 @@ main {
 }
 
 tr {
+    --border-left:1px solid black ;
     border-bottom: 1px solid black;
 }
 
@@ -171,9 +186,14 @@ ul {
 }
 
 .pokemon-ubicacion-data-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+
   text-align: left;
   background-color: #0d64d4;
   color: white; 
+}
+
+td {
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
